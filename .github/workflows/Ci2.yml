@@ -27,7 +27,7 @@ jobs:
 
       # Runs Umgebungsvariablen vergeben
       - name: Variabeln
-        run: echo "${{github}}"
+        run: echo "${{toJson(github)}}"
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
