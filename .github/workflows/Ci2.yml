@@ -35,6 +35,10 @@ jobs:
       - name: Variabeln
         run: echo "${{toJson(github)}}"
 
+      # Runs Umgebungsvariablen vergeben
+      - name: Variabeln
+        run: echo "${{toJson(github.vars)}}"
+
       # Runs a single command using the runners shell
       - name: Art start event
         run: echo "Die Workflow wurde durch ${{toJson(github.event_name)}} gestartet"
