@@ -30,6 +30,10 @@ jobs:
         run: echo "${{toJson(github)}}"
 
       # Runs a single command using the runners shell
+      - name: Art start event
+        run: echo "Die Workflow wurde durch ${{toJson(github.event_name)}} gestartet"
+
+      # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
 
