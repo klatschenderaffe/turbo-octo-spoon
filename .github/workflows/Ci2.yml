@@ -12,6 +12,7 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    # Input Feld hinzugefügt zur manuellen Ausführung
     inputs:
       anzahl_von_rechnern:
         description: Anzahl von AWS EC2-Instanzen
@@ -34,6 +35,9 @@ jobs:
 
       - name: Abfrage von der Repo-Variable
         run: echo "Die Repo-Variable ist ${{vars.NAME}}"
+
+      - name: Ausgabe Input
+        run: echo "Die Anzahl ist ${{inputs.anzahl_von_rechnern}}"
 
       - name: Beispiel vom Secret
         run: |
