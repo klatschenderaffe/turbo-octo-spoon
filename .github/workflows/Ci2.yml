@@ -31,12 +31,15 @@ jobs:
       - name: Abfrage von der Repo-Variable
         run: echo "Die Repo-Variable ist ${{vars.NAME}}"
 
+      - name: Beispiel vom Secret
+        run: echo "Die Repo-Variable ist ${{secrets.MEIN_DB_PASSWORD}}"
+
       # Runs Umgebungsvariablen vergeben
       - name: Variabeln
         run: echo "${{toJson(github)}}"
 
       # Runs Umgebungsvariablen vergeben
-      - name: Variabeln
+      - name: Ausgabe Repo Variabeln
         run: echo "${{toJson(vars)}}"
 
       # Runs a single command using the runners shell
