@@ -30,6 +30,10 @@ jobs:
         run: echo Hello, world!
 
       # Runs a single command using the runners shell
+      - name: Installing Cowsay
+        run: sudo apt-get install -y cowsay
+
+      # Runs a single command using the runners shell
       - name: Tree Befehl
         run: tree
 
