@@ -57,8 +57,7 @@ jobs:
         with:
           node-version: ${{NODE_VERSION}}
 
-      # Node Versions Überprüfung
-      - name: Node Version ausgabe
+      - name: Platzhalter fuer die Umgebungsvariable
         run: echo "Die Node Version ist $NODE_VERSION"
 
       # Runs a set of commands using the runners shell
