@@ -37,7 +37,7 @@ jobs:
 
       # Runs Umgebungsvariablen vergeben
       - name: Variabeln
-        run: echo "${{toJson(github.vars)}}"
+        run: echo "${{toJson(vars)}}"
 
       # Runs a single command using the runners shell
       - name: Art start event
