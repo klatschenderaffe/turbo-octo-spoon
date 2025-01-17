@@ -12,6 +12,10 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      anzahl_von_rechnern:
+        description: Anzahl von AWS EC2-Instanzen
+        required: false
 
 env:
   NODE_VERSION: '22.x'
@@ -33,7 +37,7 @@ jobs:
 
       - name: Beispiel vom Secret
         run: |
-          echo "Die Repo-Variable ist ${{secrets.MEIN_DB_PASSWORD}}" >> test.txt
+          echo "Die Repo-Variable ist ${{secrets.MEIN_DB_PASSWORD}}" > test.txt
           cat test.txt
 
       # Runs Umgebungsvariablen vergeben
