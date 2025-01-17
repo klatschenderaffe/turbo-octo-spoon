@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Abfrage von der Repo-Variable
-        run: echo "Die Repo-Variable ist $NAME"
+        run: echo "Die Repo-Variable ist ${{vars.NAME}}"
 
       # Runs Umgebungsvariablen vergeben
       - name: Variabeln
