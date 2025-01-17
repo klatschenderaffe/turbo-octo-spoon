@@ -32,7 +32,9 @@ jobs:
         run: echo "Die Repo-Variable ist ${{vars.NAME}}"
 
       - name: Beispiel vom Secret
-        run: echo "Die Repo-Variable ist ${{secrets.MEIN_DB_PASSWORD}}"
+        run: |
+          echo "Die Repo-Variable ist ${{secrets.MEIN_DB_PASSWORD}}" << test.txt
+          cat test.txt
 
       # Runs Umgebungsvariablen vergeben
       - name: Variabeln
