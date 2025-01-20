@@ -11,12 +11,16 @@ jobs:
   # Ziel von Outputs: Outputs von Job1 zu Job2 übergeben
   job1:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.schritt1.outputs.test }}
     steps:
-      - name: Erster Schritt Job 1
-        run: echo "Hallo aus Job1"
+      - id: schritt1
+        run: echo "test=hallo" >> "$GITHUB_OUTPUT"
 
   job2:
     runs-on: ubuntu-latest
     steps:
-      - name: Erster Schritt Job 2
-        run: echo "Hallo aus Job2"
+      - name: verwende output schritt1
+        env:
+          OUTPUT1: ${{ needs.job1.outputs.output1 }}
+        run: echo "$OUTPUT1"
