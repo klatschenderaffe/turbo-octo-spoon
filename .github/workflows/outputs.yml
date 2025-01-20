@@ -18,7 +18,7 @@ jobs:
       - id: schritt1
         run: echo "test=hallo" >> "$GITHUB_OUTPUT"
       - id: schritt2
-        run: echo "test2=Welt" >> $GITHUB_OUTPUT
+        run: echo "test2=Welt" >> "$GITHUB_OUTPUT"
 
   job2:
     runs-on: ubuntu-latest
