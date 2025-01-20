@@ -1,0 +1,22 @@
+name: outputs
+
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+jobs:
+  # Ziel von Outputs: Outputs von Job1 zu Job2 übergeben
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Erster Schritt Job 1
+        run: echo "Hallo aus Job1"
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Erster Schritt Job 2
+        run: echo "Hallo aus Job2
