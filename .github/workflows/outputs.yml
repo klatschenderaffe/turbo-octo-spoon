@@ -19,4 +19,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Erster Schritt Job 2
-        run: echo "Hallo aus Job2
+        run: echo "Hallo aus Job2"
