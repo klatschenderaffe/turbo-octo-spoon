@@ -49,3 +49,20 @@ jobs:
         run: |
           value=`cat math-homework.txt`
           echo The result is $value
+
+# Was macht der Code?
+# Der Workflow führt eine Rechnung in drei Schritten aus, wobei die Ergebnisse zwischen den Jobs geteilt werden:
+# Job 1 (Add 3 and 7)
+# Rechnet 3 + 7.
+# Speichert das Ergebnis (10) in einer Datei und lädt diese hoch.
+# Job 2 (Multiply by 9)
+# Holt das Ergebnis aus Job 1.
+# Multipliziert es mit 9 (10 * 9 = 90).
+# Speichert das neue Ergebnis (90) und lädt es wieder hoch.
+# Job 3 (Display results)
+# Holt das Endergebnis aus Job 2.
+# Gibt das Ergebnis (90) in der Konsole aus.
+# Ablauf der Berechnungen:
+# Job 1: 3 + 7 = 10
+# Job 2: 10 * 9 = 90
+# Job 3: Zeigt 90 an.
