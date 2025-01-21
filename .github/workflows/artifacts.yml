@@ -1,0 +1,24 @@
+name: first-steps_dimi
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Erzeuge eine Datei
+        run: |
+          echo "Hallo aus Job1" > output.txt
+          echo "Wir hängen noch etwas an" >> output.txt
+
+      - name: Lade die Datei als Artefakt hoch
+        uses: actions/upload-artifact@v4
+        with:
+          name: job1-output
+          path: output.txt
